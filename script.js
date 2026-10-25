@@ -551,7 +551,24 @@ class HTMLActuator {
         this.applyClasses(wrapper, classes);
         
         inner.classList.add('tile-inner');
-        inner.textContent = tile.value;
+        const cats = {
+    2: "🐱",
+    4: "😺",
+    8: "😸",
+    16: "😹",
+    32: "😻",
+    64: "😼",
+    128: "😽",
+    256: "🙀",
+    512: "😿",
+    1024: "😾",
+    2048: "🐈"
+};
+
+inner.innerHTML = `
+    <div class="cat-emoji">${cats[tile.value] || "🐈‍⬛"}</div>
+    <div class="cat-number">${tile.value}</div>
+`;
         
         if (tile.previousPosition) {
             window.requestAnimationFrame(() => {
