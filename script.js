@@ -27,11 +27,16 @@ class Tile {
 
 // Grid class to manage the game grid
 class Grid {
-    constructor(size) {
+    constructor(size, previousState) {
         this.size = size;
-        this.cells = this.empty();
+        this.cells = previousState
+            ? previousState.map(row =>
+                row.map(tile =>
+                    tile ? new Tile(tile.position, tile.value) : null
+                )
+            )
+            : this.empty();
     }
-
     empty() {
         const cells = [];
         for (let x = 0; x < this.size; x++) {
