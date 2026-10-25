@@ -151,8 +151,6 @@ class Game2048 {
 
     actuate() {
         if (this.storageManager) {
-            this.storageManager.clearGameState();
-            
             if (this.over) {
                 this.storageManager.clearGameState();
             } else {
