@@ -128,7 +128,7 @@ class Game2048 {
         // Bind the move function
         this.inputManager.on('move', this.move.bind(this));
         this.inputManager.on('restart', this.restart.bind(this));
-        this.inputManager.on('keepPlaying', this.keepPlaying.bind(this));
+        this.inputManager.on('keepPlaying', this.continuePlaying.bind(this));
     }
     
     addStartTiles() {
@@ -326,7 +326,7 @@ class Game2048 {
         this.setup();
     }
     
-    keepPlaying() {
+    continuePlaying() {
         this.keepPlaying = true;
         this.actuator.continueGame();
     }
