@@ -294,6 +294,12 @@ body {
     margin-top: 59px;
 }
 
+/* Show the overlay when the game ends or the player wins. */
+.game-message.game-over,
+.game-message.game-won {
+    display: block;
+}
+
 .game-message.game-won {
     background: rgba(237, 194, 46, 0.5);
     color: #f9f6f2;
