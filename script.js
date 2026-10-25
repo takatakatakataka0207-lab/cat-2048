@@ -122,8 +122,7 @@ class Game2048 {
         this.won = false;
         this.keepPlaying = false;
         
-        this.addStartTiles();
-        this.actuate();
+       this.setup();
         
         // Bind the move function
         this.inputManager.on('move', this.move.bind(this));
